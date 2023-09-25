@@ -4,9 +4,13 @@ import AppRouter from './Router/AppRouter';
 
 function App() {
   return (
-    <div className='App'>
+    <div className=' mr-1'>
+<div className='App'>
        <AppRouter/>
     </div>
+
+    </div>
+    
   );
 }
 //////////
