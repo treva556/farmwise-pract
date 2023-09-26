@@ -6,6 +6,7 @@ import Searchpage from '../pages/Searchpage';
 // import Sellerform from '../pages/Sellerform';
 import LoginPage from '../pages/Loginpage';
 import Sellerform from '../pages/Sellerform';
+import Animalproduce from '../components/Categories/Animalproduce';
 
 
 function AppRouter() {
@@ -18,6 +19,7 @@ function AppRouter() {
     <Route path="/login" element={<LoginPage />} />
     <Route path="/form" element={<Sellerform/>} />
     <Route path="/search" element={<Searchpage/>} />
+    <Route path="/animalproduce" element={<Animalproduce />} /> {/* Add this line */}
 
 
  

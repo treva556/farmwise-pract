@@ -54,7 +54,7 @@ import React, { useState } from "react";
           <select
             id="subcountyFilter"
             name="subcountyFilter"
-            className="w-full md:w-40 h-10 border-2 border-yellow-500 focus:outline-none focus:border-yellow-500 text-green-500 rounded px-2 md:px-3 py-0 md:py-1 tracking-wider"
+            className="w-full md:w-40 h-10 border-2 bg-yellow-300 border-yellow-500 focus:outline-none focus:border-yellow-500 text-green-500 rounded px-2 md:px-3 py-0 md:py-1 tracking-wider"
             value={subcountyFilter}
             onChange={(e) => setSubcountyFilter(e.target.value)}
           >
@@ -72,7 +72,13 @@ import React, { useState } from "react";
         >
           Search
         </button>
-     <button className=" ml-8 justify-end items-end">BE a SELLER</button> 
+        <button 
+          type="button"
+          className="bg-green-500 text-white rounded-r px-2 md:px-3 py-0 md:py-1"
+          onClick={handleSearch}
+        >
+          Be A Seller
+        </button>
     </div>
   );
 }
