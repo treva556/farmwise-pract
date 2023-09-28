@@ -7,6 +7,7 @@ import Searchpage from '../pages/Searchpage';
 import LoginPage from '../pages/Loginpage';
 import Sellerform from '../pages/Sellerform';
 import Animalproduce from '../components/Categories/Animalproduce';
+import EquipandServices from '../components/Categories/Faequi&services';
 
 
 function AppRouter() {
@@ -20,6 +21,8 @@ function AppRouter() {
     <Route path="/form" element={<Sellerform/>} />
     <Route path="/search" element={<Searchpage/>} />
     <Route path="/animalproduce" element={<Animalproduce />} /> {/* Add this line */}
+    <Route path="/equip&sevices" element={<EquipandServices/>} /> {/* Add this line */}
+
 
 
  
