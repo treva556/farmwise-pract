@@ -8,6 +8,7 @@ import EquipandServices from "./Categories/Faequi&services";
 function Bodyy() {
   return (
     <>
+    
       {/* <div className="mt-8 bg-yellow-200">
         <h1 className=" text-xl">Crop Produce and Input</h1>
         <div className="flex">
