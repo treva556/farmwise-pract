@@ -8,6 +8,7 @@ import LoginPage from '../pages/Loginpage';
 import Sellerform from '../pages/Sellerform';
 import Animalproduce from '../components/Categories/Animalproduce';
 import EquipandServices from '../components/Categories/Faequi&services';
+import Adminprofile from '../Admin/Adminprofile';
 
 
 function AppRouter() {
@@ -22,6 +23,8 @@ function AppRouter() {
     <Route path="/search" element={<Searchpage/>} />
     <Route path="/animalproduce" element={<Animalproduce />} /> {/* Add this line */}
     <Route path="/equip&sevices" element={<EquipandServices/>} /> {/* Add this line */}
+    <Route path="/admin" element={<Adminprofile />} />
+    <Route path="/sellerprofile" element={<Sellerform/>} />
 
 
 
