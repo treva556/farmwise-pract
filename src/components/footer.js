@@ -21,15 +21,18 @@ function Footer() {
             </a>
           </div>
           <div className="flex flex-col space-y-3">
-            <h1>Company</h1>
+            <h1>Contact</h1>
             <a className="text-sm text-gray-400" href="/">
-              About us
+              marktreva92@gmail.com
             </a>
             <a className="text-sm text-gray-400" href="/">
-              Contact Us
+              0795156246
             </a>
             <a className="text-sm text-gray-400" href="/">
-              Blog
+              instagram
+            </a>
+            <a className="text-sm text-gray-400" href="/">
+              twitter
             </a>
           </div>
           <div className="flex flex-col space-y-3">
