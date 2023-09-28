@@ -7,6 +7,8 @@ import pic1 from "../../images/pic1.png"; // Adjust the path
 function Animalproduce() {
   return (
     <div>
+      navv
+    <div>
       <h1>Animal Produce</h1>
       <Link to="/animalproduce/meat">
         <div className="w-full shadow-sm p-5 rounded-md cursor-pointer hover:border-green-500">
@@ -40,6 +42,7 @@ function Animalproduce() {
       </Link>
        Add more links for other categories
     </div> 
+    </div>
   );
 }
 
