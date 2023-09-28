@@ -3,12 +3,13 @@ import React from "react";
 function Sellershop() {
     return (
       <div>
-        <header className=" bg-green-900 ">
-           jjjjjjjjj
-        </header>
+          <div className=" w-screen h-[3cm] bg-green-900 text bg-center">
+      {/* Your content here */}
+      <p className=""> </p>
+    </div>
         <p>
 
-            kkkkkkkkkkkkkkkkk
+            
         </p>
       </div>
     );
