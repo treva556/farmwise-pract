@@ -1,14 +1,21 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-
+import Pendingshops from "./Pendingshops";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function Adminprofile() {
-    return (
-      <div className=" bg-green-600">
-       <Sidebar/>
+  return (
+    // <BrowserRouter>
+      <div className="flex">
+        <Sidebar />
+        {/* <Switch>
+          <Route path="/pending" component={Pendingshops} />
+          {/* Add more routes for other components 
+        </Switch>
+         */}
       </div>
-    );
-  }
-  //
-  export default Adminprofile;
-  
+    // </BrowserRouter>
+  );
+}
+
+export default Adminprofile;
