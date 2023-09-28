@@ -3,8 +3,8 @@ import React from 'react';
 
 const Sellerform = () => {
   return (
-    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden ">
-      <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-rose-600/40 ring-2 ring-indigo-600 lg:max-w-xl">
+    <div className=" bg-yellow-400 relative flex flex-col justify-center min-h-screen overflow-hidden ">
+      <div className="w-full p-6 m-auto bg-green-200 rounded-md shadow-xl shadow-rose-600/40 ring-2 ring-indigo-600 lg:max-w-xl">
         <h1 className="text-3xl font-semibold text-center text-indigo-700  uppercase decoration-wavy">
           Merchant Form
         </h1>
