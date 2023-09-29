@@ -9,7 +9,7 @@ function Bodyy() {
   return (
     <>
     
-      {/* <div className="mt-8 bg-yellow-200">
+      <div className="mt-8 bg-yellow-200">
         <h1 className=" text-xl">Crop Produce and Input</h1>
         <div className="flex">
           <Link to="/farmproduce/crop produce">
@@ -24,7 +24,7 @@ function Bodyy() {
           </Link>
          Includes Fruits,Vegetables, Cereals, Trees, Seedlings, Flowers, Ferterlizers, Hay, Manure
         </div>
-      </div> */}
+      </div>
 
 
 
@@ -64,10 +64,6 @@ function Bodyy() {
           
         </div>
       </div>
-
-
-    
-
    
     </>
   );
