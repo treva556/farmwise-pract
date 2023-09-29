@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+
 
   function Searchbar() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -72,13 +74,14 @@ import React, { useState } from "react";
         >
           Search
         </button>
+        <Link to="/sellerform">
         <button 
           type="button"
           className="bg-green-500 text-white rounded-r px-2 md:px-3 py-0 md:py-1"
-          onClick={handleSearch}
         >
           Be A Seller
         </button>
+      </Link>
     </div>
   );
 }

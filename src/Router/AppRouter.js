@@ -21,6 +21,7 @@ function AppRouter() {
         <Route path="/search" element={<Searchpage />} />
         <Route path="/admin" element={<Adminprofile />} />
         <Route path="/sellershop" element={<Sellershop/>} />
+        <Route path="/sellerform" element={<Sellerform/>} />
 
         
         <Route path="/animalproduce/*" element={<Animalproduce />} />
