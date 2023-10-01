@@ -1,39 +1,30 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-function CategoryPage(props) {
-  const [category, setCategory] = useState(null);
-  const [error, setError] = useState(null);
-  const categoryId = props.match.params.categoryId;
+function CategoryPage() {
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/v1/categories/${categoryId}`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
+    fetch("http://localhost:3000/categories")
+      .then((response) => response.json())
+      .then((data) => {
+        setCategories(data);
       })
-      .then(data => {
-        setCategory(data);
-      })
-      .catch(error => {
-        console.error('Error fetching category data:', error);
-        setError(error.message);
+      .catch((error) => {
+        console.error("Error fetching categories:", error);
       });
-  }, [categoryId]);
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  if (!category) {
-    return <div>Loading...</div>;
-  }
+  }, []);
 
   return (
     <div>
-      <h1>{category.name}</h1>
-      {/* Render other category details */}
+      <h1>Categories</h1>
+      <ul>
+        {categories.map((category) => (
+          <li key={category.id}>
+            <Link to={`/categories/${category.id}`}>{category.name}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
