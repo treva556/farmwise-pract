@@ -25,6 +25,9 @@ function AppRouter() {
         
         <Route path="/animalproduce/*" element={<Animalproduce />} />
         <Route path="/equipandServices/*" element={<EquipandServices />} />
+        <Route path="/categories/:categoryId/subcategories/:subcategoryId/products/:productId" component={ProductPage} />
+        <Route path="/categories/:categoryId/subcategories/:subcategoryId" component={SubcategoryPage} />
+        <Route path="/categories/:categoryId" component={CategoryPage} />
        
       </Routes>
     </BrowserRouter>
