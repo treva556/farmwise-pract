@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from '../pages/Homepage';
@@ -31,9 +33,6 @@ function AppRouter() {
         <Route path="/categories/:categoryId/subcategories/:subcategoryId" component={SubcategoryPage} />
         <Route path="/categories/:categoryId" component={CategoryPage} />
 
-        {/* Wildcard routes */}
-        {/* <Route path="/animalproduce/*" element={<Animalproduce />} />
-        <Route path="/equipandServices/*" element={<EquipandServices />} /> */}
       </Routes>
     </BrowserRouter>
   );
