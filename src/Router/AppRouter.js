@@ -32,8 +32,8 @@ function AppRouter() {
         <Route path="/categories/:categoryId" component={CategoryPage} />
 
         {/* Wildcard routes */}
-        <Route path="/animalproduce/*" element={<Animalproduce />} />
-        <Route path="/equipandServices/*" element={<EquipandServices />} />
+        {/* <Route path="/animalproduce/*" element={<Animalproduce />} />
+        <Route path="/equipandServices/*" element={<EquipandServices />} /> */}
       </Routes>
     </BrowserRouter>
   );
