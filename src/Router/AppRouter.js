@@ -9,6 +9,9 @@ import Animalproduce from '../components/Categories/Animalproduce';
 import EquipandServices from '../components/Categories/Faequi&services';
 import Layout from '../Admin/Layout';
 import Sellershop from '../Seller/Shop';
+import SubcategoryPage from '../pages/SubcategoryPage';
+import CategoryPage from '../pages/CategoryPage';
+import ProductPage from '../pages/ProductPage';
 
 
 function AppRouter() {
