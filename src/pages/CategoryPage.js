@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 
 function CategoryPage(props) {
@@ -8,15 +6,7 @@ function CategoryPage(props) {
   const categoryId = props.match.params.categoryId;
 
   useEffect(() => {
-    fetchCategoryData();
-  }, [categoryId]);
-
-  const fetchCategoryData = () => {
-    fetch(`http://localhost:3000/categories/${categoryId}`, {
-      headers: {
-        Accept: 'application/json'
-      }
-    })
+    fetch(`http://localhost:3000/api/v1/categories/${categoryId}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -30,7 +20,7 @@ function CategoryPage(props) {
         console.error('Error fetching category data:', error);
         setError(error.message);
       });
-  };
+  }, [categoryId]);
 
   if (error) {
     return <div>Error: {error}</div>;
