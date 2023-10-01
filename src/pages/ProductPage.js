@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function ProductPage (){
-    return (
-      
-      <div className=" w-screen h-[3cm] bg-green-900 text bg-center">
-      {/* Your content here */}
-      <p className=""> Advert</p>
-    </div>
-    );
+function ProductPage(props) {
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    const productId = props.match.params.productId;
+    fetch(`http://localhost:3000/products/${productId}.json`)
+      .then((response) => response.json())
+      .then((data) => {
+        setProduct(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching product data: ", error);
+      });
+  }, [props.match.params.productId]);
+
+  if (!product) {
+    return <div>Loading...</div>;
   }
-  
-  export default ProductPage;
-  
- 
+
+  return (
+    <div>
+      <h1>{product.name}</h1>
+      <p>{product.description}</p>
+      <p>Price: {product.price}</p>
+      {/* Render other product details */}
+    </div>
+  );
+}
+
+export default ProductPage;

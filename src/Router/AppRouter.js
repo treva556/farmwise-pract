@@ -5,8 +5,8 @@ import Searchpage from '../pages/Searchpage';
 import LoginPage from '../pages/Loginpage';
 import Sellerform from '../Seller/Sellerform';
 import Adminprofile from '../Admin/Adminprofile';
-import Animalproduce from '../components/Categories/Animalproduce';
-import EquipandServices from '../components/Categories/Faequi&services';
+// import Animalproduce from '../components/Categories/Animalproduce';
+// import EquipandServices from '../components/Categories/Faequi&services';
 import Layout from '../Admin/Layout';
 import Sellershop from '../Seller/Shop';
 import SubcategoryPage from '../pages/SubcategoryPage';
@@ -25,13 +25,15 @@ function AppRouter() {
         <Route path="/admin" element={<Adminprofile />} />
         <Route path="/sellershop" element={<Sellershop/>} />
         <Route path="/sellerform" element={<Sellerform/>} />
-        
-        <Route path="/animalproduce/*" element={<Animalproduce />} />
-        <Route path="/equipandServices/*" element={<EquipandServices />} />
+
+        {/* Subcategory and Product routes */}
         <Route path="/categories/:categoryId/subcategories/:subcategoryId/products/:productId" component={ProductPage} />
         <Route path="/categories/:categoryId/subcategories/:subcategoryId" component={SubcategoryPage} />
         <Route path="/categories/:categoryId" component={CategoryPage} />
-       
+
+        {/* Wildcard routes */}
+        <Route path="/animalproduce/*" element={<Animalproduce />} />
+        <Route path="/equipandServices/*" element={<EquipandServices />} />
       </Routes>
     </BrowserRouter>
   );

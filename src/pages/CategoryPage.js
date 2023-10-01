@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function CategoryPage (){
-    return (
-      
-      <div className=" w-screen h-[3cm] bg-green-900 text bg-center">
-      {/* Your content here */}
-      <p className=""> Advert</p>
-    </div>
-    );
+function CategoryPage(props) {
+  const [category, setCategory] = useState(null);
+
+  useEffect(() => {
+    const categoryId = props.match.params.categoryId;
+    fetch(`http://localhost:3000/categories/${categoryId}.json`)
+      .then((response) => response.json())
+      .then((data) => {
+        setCategory(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching category data: ", error);
+      });
+  }, [props.match.params.categoryId]);
+
+  if (!category) {
+    return <div>Loading...</div>;
   }
-  
-  export default CategoryPage;
-  
- 
+
+  return (
+    <div>
+      <h1>{category.name}</h1>
+      {/* Render other category details */}
+    </div>
+  );
+}
+
+export default CategoryPage;
