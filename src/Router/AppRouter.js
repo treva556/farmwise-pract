@@ -14,6 +14,10 @@ import SubcategoryPage from '../pages/SubcategoryPage';
 import CategoryPage from '../pages/CategoryPage';
 import ProductPage from '../pages/ProductPage';
 
+import Shops from '../Admin/Shops';
+import Pendingshops from '../Admin/Pendingshops';
+import Addcategory from '../Admin/addcategory';
+
 
 function AppRouter() {
   return (
@@ -26,6 +30,12 @@ function AppRouter() {
         <Route path="/admin" element={<Adminprofile />} />
         <Route path="/sellershop" element={<Sellershop/>} />
         <Route path="/sellerform" element={<Sellerform/>} />
+
+
+        <Route path="/admin/pending" element={<Pendingshops/>} />
+         <Route path="/admin/shops" element={<Shops/>} /> 
+         <Route path="/admin/add" element={<Addcategory/>} /> 
+
 
         {/* Subcategory and Product routes */}
          <Route path="/categories/:categoryId/subcategories/:subcategoryId/products/:productId" element={<ProductPage/>} />
