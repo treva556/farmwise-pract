@@ -29,9 +29,9 @@ function AppRouter() {
         <Route path="/sellerform" element={<Sellerform/>} />
 
         {/* Subcategory and Product routes */}
-        <Route path="/categories/:categoryId/subcategories/:subcategoryId/products/:productId" component={ProductPage} />
-        <Route path="/categories/:categoryId/subcategories/:subcategoryId" component={SubcategoryPage} />
-        <Route path="/categories/:categoryId" component={CategoryPage} />
+         <Route path="/categories/:categoryId/subcategories/:subcategoryId/products/:productId" element={<ProductPage/>} />
+        <Route path="/categories/:categoryId/subcategories/:subcategoryId" element={<SubcategoryPage/>} /> 
+        <Route path="/categories/:categoryId" element={<CategoryPage />} />
 
       </Routes>
     </BrowserRouter>

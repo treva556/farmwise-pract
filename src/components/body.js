@@ -2,8 +2,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import pic1 from "../images/pic1.png";
-import Animalproduce from "./Categories/Animalproduce";
+// import Animalproduce from "./Categories/Animalproduce";
 import EquipandServices from "./Categories/Faequi&services";
+import CategoryPage from "../pages/CategoryPage";
 
 function Bodyy() {
   return (

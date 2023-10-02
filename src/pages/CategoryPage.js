@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -15,6 +17,8 @@ function CategoryPage() {
       });
   }, []);
 
+  console.log (categories)
+
   return (
     <div>
       <h1>Categories</h1>
@@ -30,3 +34,4 @@ function CategoryPage() {
 }
 
 export default CategoryPage;
+
