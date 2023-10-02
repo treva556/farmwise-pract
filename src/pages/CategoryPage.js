@@ -1,7 +1,6 @@
-
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import pic1 from "../images/pic1.png";
 
 function CategoryPage() {
   const [categories, setCategories] = useState([]);
@@ -17,22 +16,27 @@ function CategoryPage() {
       });
   }, []);
 
-  console.log (categories)
-
   return (
     <div>
       <h1>Categories</h1>
-      <ul className=" bg-yellow-300">
+      <div className="flex flex-wrap justify-around mt-8">
         {categories.map((category) => (
-          <li key={category.id}>
-            <Link to={`/categories/${category.slug}/subcategories`}>{category.name}</Link>
-          </li>
+          <Link
+            to={`/categories/${category.slug}/subcategories`}
+            key={category.id}
+            className="w-64 h-80 p-4 m-2 bg-yellow-200 rounded-lg shadow-md text-center hover:border-green-500 transition duration-300"
+          >
+            <img
+              src={pic1}
+              alt={category.name}
+              className="mx-auto h-32 w-32 object-contain mb-4"
+            />
+            <h2 className="font-bold text-xl">{category.name}</h2>
+          </Link>
         ))}
-      </ul>
-     
+      </div>
     </div>
   );
 }
 
 export default CategoryPage;
-

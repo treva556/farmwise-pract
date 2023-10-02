@@ -18,9 +18,11 @@ function SubcategoryPage() {
         return response.json();
       })
       .then((data) => {
-        // Assuming the response is an array and you want to display the first subcategory
-        if (data.length > 0) {
-          setSubcategory(data[0]); // Display the first subcategory
+        // Check if the response is an array or an object with subcategories property
+        const subcategories = Array.isArray(data) ? data : data.subcategories;
+
+        if (subcategories && subcategories.length > 0) {
+          setSubcategory(subcategories[0]); // Display the first subcategory
         } else {
           throw new Error("No subcategories found");
         }
@@ -44,9 +46,6 @@ function SubcategoryPage() {
     return <div>No subcategories found.</div>;
   }
 
-  console.log (subcategory)
-
-
   return (
     <div>
       <h1>Subcategory Details</h1>
@@ -54,8 +53,7 @@ function SubcategoryPage() {
         <strong>ID:</strong> {subcategory.id}<br />
         <strong>Name:</strong> {subcategory.name}<br />
         <strong>Category ID:</strong> {subcategory.category_id}<br />
-        {/* <strong>Created At:</strong> {subcategory.created_at}<br />
-        <strong>Updated At:</strong> {subcategory.updated_at}<br /> */}
+        {/* Include other properties as needed */}
         <strong>Slug:</strong> {subcategory.slug}<br />
       </div>
     </div>
