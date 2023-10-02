@@ -7,8 +7,7 @@ import Searchpage from '../pages/Searchpage';
 import LoginPage from '../pages/Loginpage';
 import Sellerform from '../Seller/Sellerform';
 import Adminprofile from '../Admin/Adminprofile';
-// import Animalproduce from '../components/Categories/Animalproduce';
-// import EquipandServices from '../components/Categories/Faequi&services';
+
 import Layout from '../Admin/Layout';
 import Sellershop from '../Seller/Shop';
 import SubcategoryPage from '../pages/SubcategoryPage';
