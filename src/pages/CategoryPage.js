@@ -5,7 +5,7 @@ function CategoryPage() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/categories")
+    fetch("http://localhost:3000/categories.json")
       .then((response) => response.json())
       .then((data) => {
         setCategories(data);

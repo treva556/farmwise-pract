@@ -44,7 +44,7 @@ function Bodyy() {
           </Link>
           Includes Meat and Live animals: Fish, Poultry(Chicken and ducks), Goats, pigs, cows, sheep, Honey 
           
-        </div>
+        </div> 
       </div>
    
     </>
