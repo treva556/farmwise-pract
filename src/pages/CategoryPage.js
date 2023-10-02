@@ -22,14 +22,14 @@ function CategoryPage() {
   return (
     <div>
       <h1>Categories</h1>
-      <ul>
+      <ul className=" bg-yellow-300">
         {categories.map((category) => (
           <li key={category.id}>
-                <Link to={`/categories/${category.id}/subcategories/:subcategoryId`}>{category.name}</Link>
-
+            <Link to={`/categories/${category.slug}/subcategories`}>{category.name}</Link>
           </li>
         ))}
       </ul>
+     
     </div>
   );
 }

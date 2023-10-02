@@ -1,16 +1,16 @@
 
 
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function SubcategoryPage() {
-  const [subcategories, setSubcategories] = useState([]);
+  const [subcategory, setSubcategory] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { categoryId } = useParams();
+  const { categorySlug } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/categories/${categoryId}/subcategories.json`)
+    fetch(`http://localhost:3000/categories/${categorySlug}/subcategories.json`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -18,39 +18,46 @@ function SubcategoryPage() {
         return response.json();
       })
       .then((data) => {
-        setSubcategories(data);
+        // Assuming the response is an array and you want to display the first subcategory
+        if (data.length > 0) {
+          setSubcategory(data[0]); // Display the first subcategory
+        } else {
+          throw new Error("No subcategories found");
+        }
         setLoading(false);
       })
       .catch((error) => {
         setError(error);
         setLoading(false);
       });
-  }, [categoryId]);
+  }, [categorySlug]);
 
   if (loading) {
-    return <div>Loading...</div>; // Display a loading indicator
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>; // Display an error message
+    return <div>Error: {error.message}</div>;
   }
 
-  if (subcategories.length === 0) {
-    return <div>No subcategories found.</div>; // Display a message when there are no subcategories
+  if (!subcategory) {
+    return <div>No subcategories found.</div>;
   }
+
+  console.log (subcategory)
+
 
   return (
     <div>
-      <h1>Subcategories</h1>
-      <ul>
-        {subcategories.map((subcategory) => (
-          <li key={subcategory.id}>
-            <Link to={`/categories/${categoryId}/subcategories/${subcategory.id}`}>
-              {subcategory.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <h1>Subcategory Details</h1>
+      <div>
+        <strong>ID:</strong> {subcategory.id}<br />
+        <strong>Name:</strong> {subcategory.name}<br />
+        <strong>Category ID:</strong> {subcategory.category_id}<br />
+        {/* <strong>Created At:</strong> {subcategory.created_at}<br />
+        <strong>Updated At:</strong> {subcategory.updated_at}<br /> */}
+        <strong>Slug:</strong> {subcategory.slug}<br />
+      </div>
     </div>
   );
 }
