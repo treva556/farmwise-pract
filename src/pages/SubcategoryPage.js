@@ -1,7 +1,5 @@
-
-
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function SubcategoryPage() {
   const [subcategories, setSubcategories] = useState([]);
@@ -18,7 +16,6 @@ function SubcategoryPage() {
         return response.json();
       })
       .then((data) => {
-        // Assuming data is an array of subcategories
         setSubcategories(data);
         setLoading(false);
       })
@@ -42,14 +39,14 @@ function SubcategoryPage() {
 
   return (
     <div>
-      <h1>Subcategory Details</h1>
+      <h1>Subcategories</h1>
       {subcategories.map((subcategory) => (
         <div key={subcategory.id}>
           <strong>ID:</strong> {subcategory.id}<br />
           <strong>Name:</strong> {subcategory.name}<br />
           <strong>Category ID:</strong> {subcategory.category_id}<br />
           <strong>Slug:</strong> {subcategory.slug}<br />
-          {/* Include other properties as needed */}
+          <Link to={`/categories/${categorySlug}/subcategories/${subcategory.slug}/products`}>View Products</Link>
         </div>
       ))}
     </div>

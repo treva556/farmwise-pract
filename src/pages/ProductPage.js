@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-function ProductPage(props) {
+function ProductPage() {
   const [product, setProduct] = useState(null);
+  const { categorySlug, subcategorySlug, productSlug } = useParams();
 
   useEffect(() => {
-    const productId = props.match.params.productId;
-    fetch(`http://localhost:3000/products/${productId}.json`)
+    fetch(`http://localhost:3000/categories/${categorySlug}/subcategories/${subcategorySlug}/products.json`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -18,7 +19,7 @@ function ProductPage(props) {
       .catch((error) => {
         console.error("Error fetching product data: ", error);
       });
-  }, [props.match.params.productId]);
+  }, [categorySlug, subcategorySlug, productSlug]);
 
   if (!product) {
     return <div>Loading...</div>;
