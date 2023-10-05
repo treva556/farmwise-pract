@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -11,12 +9,9 @@ function ProductPage() {
     fetch(`http://localhost:3000/categories/${categorySlug}/subcategories/${subcategorySlug}/products.json`)
       .then(response => response.json())
       .then(data => {
-        console.log('API Response:', data); // Log the entire API response
+        console.log('API Response:', data);
         if (data && data.length > 0) {
-          console.log('Product Name:', data[0].name); // Log product name
-          console.log('Product Description:', data[0].description); // Log product description
-          console.log('Product Price:', data[0].price); // Log product price
-          setProduct(data[0]); // Update the product state with fetched data
+          setProduct(data[0]);
         }
       })
       .catch(error => {
@@ -26,19 +21,17 @@ function ProductPage() {
 
   if (!product) {
     return <div>Loading...</div>;
-
-
   }
 
-  console.log(product); // Add this line
-
-
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-      <p>Price: {product.price}</p>
-      {/* Render other product details */}
+    <div className="bg-green-600 min-h-screen flex flex-col items-center p-8">
+      <h1 className="text-3xl font-semibold text-white mb-8">Products</h1>
+      <div className="w-full max-w-3xl bg-yellow-500 p-8 rounded-lg shadow-lg">
+        <h1 className="text-2xl font-semibold mb-4">{product.name}</h1>
+        <p className="text-gray-700 mb-2">{product.description}</p>
+        <p className="text-green-600 font-semibold">Price: ${product.price}</p>
+        {/* Render other product details */}
+      </div>
     </div>
   );
 }

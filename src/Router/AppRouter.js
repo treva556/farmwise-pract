@@ -11,12 +11,13 @@ import Adminprofile from '../Admin/Adminprofile';
 import Layout from '../Admin/Layout';
 import Sellershop from '../Seller/Shop';
 import SubcategoryPage from '../pages/SubcategoryPage';
-import CategoryPage from '../pages/CategoryPage';
+// import CategoryPage from '../pages/CategoryPage';
 import ProductPage from '../pages/ProductPage';
 
 import Shops from '../Admin/Shops';
 import Pendingshops from '../Admin/Pendingshops';
 import Addcategory from '../Admin/addcategory';
+import Allusers from '../Admin/Userspage';
 
 
 function AppRouter() {
@@ -42,7 +43,9 @@ function AppRouter() {
          <Route path="/categories/:categorySlug/subcategories" element={<SubcategoryPage/>} /> 
 
 
-        <Route path="/categories/:categoryId" element={<CategoryPage />} />
+        {/* <Route path="/categories/:categoryId" element={<CategoryPage />} /> */}
+        <Route path="/admin/allusers" element={<Allusers/>} /> 
+
 
       </Routes>
     </BrowserRouter>
