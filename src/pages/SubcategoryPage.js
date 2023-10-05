@@ -47,7 +47,7 @@ function SubcategoryPage() {
       <h1>Subcategories</h1>
     <div className="flex flex-wrap justify-center">
       {subcategories.map((subcategory) => (
-        <div key={subcategory.id} className="m-4 bg-yellow-500 p-8 rounded-lg shadow-lg">
+        <div key={subcategory.id} className="m-4 bg-yellow-300 p-8 rounded-lg shadow-lg">
           <h1 className="text-2xl font-semibold mb-4">{subcategory.name}</h1>
           <p className="text-gray-700 mb-2">{subcategory.description}</p>
           <Link

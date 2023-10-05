@@ -26,7 +26,7 @@ function ProductPage() {
   return (
     <div className="bg-green-600 min-h-screen flex flex-col items-center p-8">
       <h1 className="text-3xl font-semibold text-white mb-8">Products</h1>
-      <div className="w-full max-w-3xl bg-yellow-500 p-8 rounded-lg shadow-lg">
+      <div className="w-full max-w-3xl bg-yellow-300 p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl font-semibold mb-4">{product.name}</h1>
         <p className="text-gray-700 mb-2">{product.description}</p>
         <p className="text-green-600 font-semibold">Price: ${product.price}</p>

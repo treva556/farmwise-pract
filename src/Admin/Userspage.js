@@ -22,7 +22,7 @@ function Allusers() {
       {users.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {users.map((user) => (
-            <div key={user.id} className="bg-yellow-500 p-4 rounded-lg shadow-lg">
+            <div key={user.id} className="bg-yellow-300 p-4 rounded-lg shadow-lg">
               <h2 className="text-xl font-semibold mb-2">{user.name}</h2>
               <p className="text-gray-700 mb-2">Location: {user.location}</p>
               <p className="text-gray-700 mb-2">Email: {user.email}</p>
