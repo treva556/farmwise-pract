@@ -44,7 +44,7 @@ function AppRouter() {
 
 
         {/* <Route path="/categories/:categoryId" element={<CategoryPage />} /> */}
-        <Route path="/admin/allusers" element={<Allusers/>} /> 
+        <Route path="/admin/users" element={<Allusers/>} /> 
 
 
       </Routes>
