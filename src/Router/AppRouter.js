@@ -38,9 +38,10 @@ function AppRouter() {
 
 
         {/* Subcategory and Product routes */}
-         <Route path="/categories/:categoryId/subcategories/:subcategoryId/products" element={<ProductPage/>} />
+         <Route path="/categories/:categorySlug/subcategories/:subcategorySlug/products" element={<ProductPage/>} />
+         <Route path="/categories/:categorySlug/subcategories" element={<SubcategoryPage/>} /> 
 
-        <Route path="/categories/:categorySlug/subcategories" element={<SubcategoryPage/>} /> 
+
         <Route path="/categories/:categoryId" element={<CategoryPage />} />
 
       </Routes>
