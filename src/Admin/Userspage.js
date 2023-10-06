@@ -1,6 +1,7 @@
 
 
 import React, { useState, useEffect } from "react";
+import Sidebar from "./Sidebar";
 
 function Allusers() {
   const [users, setUsers] = useState([]);
@@ -17,7 +18,13 @@ function Allusers() {
   }, []);
 
   return (
+<div className=" flex">
+    <div>
+      <Sidebar/>
+
+    </div>
     <div className="bg-green-600 p-8">
+     
       <h1 className="text-3xl font-semibold text-white mb-8">All Users</h1>
       {users.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -33,6 +40,7 @@ function Allusers() {
       ) : (
         <p className="text-white">No users found.</p>
       )}
+    </div>
     </div>
   );
 }

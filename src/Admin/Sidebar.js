@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Sidebar() {
   return (
-    <div className="bg-green-600 min-h-screen w-56 rounded-r-3xl overflow-hidden">
+    <div className="bg-green-600 h-screen w-56 rounded-r-3xl overflow-hidden">
       <div className="flex items-center justify-center h-20 shadow-md">
         <h1 className="text-3xl uppercase text-indigo-500">Logo</h1>
       </div>
