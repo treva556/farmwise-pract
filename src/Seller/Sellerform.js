@@ -2,8 +2,8 @@
 
 
 
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const Sellerform = () => {
   const [formData, setFormData] = useState({
@@ -14,26 +14,6 @@ const Sellerform = () => {
     password: ''
   });
 
-  const [csrfToken, setCsrfToken] = useState(null);
-
-  useEffect(() => {
-    // Fetch the CSRF token when the component mounts
-    fetchCSRFToken();
-  }, []);
-
-  const fetchCSRFToken = async () => {
-    try {
-      const response = await fetch('/rails/info/routes');
-      if (!response.ok) {
-        throw new Error('Failed to fetch CSRF token');
-      }
-      const token = response.headers.get('x-csrf-token');
-      setCsrfToken(token);
-    } catch (error) {
-      console.error('Error fetching CSRF token:', error);
-    }
-  };
-
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -43,28 +23,18 @@ const Sellerform = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
     try {
-      const response = await fetch('http://localhost:3000/register', {
-        method: 'POST',
+      const response = await axios.post('http://localhost:3000/register', formData, {
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'X-CSRF-Token': csrfToken // Include the CSRF token in the request headers
-        },
-        body: JSON.stringify(formData)
+        }
       });
-
-      if (!response.ok) {
-        throw new Error('Registration failed');
-      }
-
-      const data = await response.json();
-      // Handle success, e.g., redirect to the user's profile/shop page
-      console.log('Registration successful:', data);
+      console.log('Registration successful:', response.data);
+      // Handle success, e.g., redirect or show a success message
     } catch (error) {
-      // Handle error, e.g., show an error message to the user
       console.error('Error during registration:', error);
+      // Handle error, e.g., show an error message to the user
     }
   };
 
@@ -76,7 +46,7 @@ const Sellerform = () => {
         </h1>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="mb-2">
-            <label className="text-gray-700">Your name</label>
+            <label className="text-gray-700">User name</label>
             <input
               type="text"
               name="name"
@@ -98,7 +68,7 @@ const Sellerform = () => {
             />
           </div>
           <div className="mb-2">
-            <label className="text-gray-700">Contact</label>
+            <label className="text-gray-700">Phone</label>
             <input
               type="tel"
               name="phone"
@@ -109,7 +79,7 @@ const Sellerform = () => {
             />
           </div>
           <div className="mb-2">
-            <label className="text-gray-700">County</label>
+            <label className="text-gray-700">Location</label>
             <input
               type="text"
               name="location"
