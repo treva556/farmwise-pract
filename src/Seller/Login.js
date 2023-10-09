@@ -1,18 +1,33 @@
 
 
 import React, { useState } from "react";
-import api from "./api"; // Your API functions
+import { useHistory } from "react-router-dom";
 
 const LoginShop = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory(); // Get the history object from React Router
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.login(email, password); // Call your login API function
-      setUser(response.data.user); // Update user state
-      localStorage.setItem("token", response.data.token); // Store token in localStorage
+      const response = await fetch('https://example.com/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setUser(data.user); // Update user state
+        localStorage.setItem("token", data.token); // Store token in localStorage
+        history.push("/sellershop"); // Redirect to the user dashboard route after successful login
+      } else {
+        console.error("Login error:", response.status);
+        // Handle login error (show error message, etc.)
+      }
     } catch (error) {
       console.error("Login error:", error);
       // Handle login error (show error message, etc.)
